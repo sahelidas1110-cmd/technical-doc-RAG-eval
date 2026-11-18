@@ -1,0 +1,44 @@
+[
+    {
+        "id": "Q001",
+        "question": "What is FastAPI used for?",
+        "expected_answer": "FastAPI is a Python framework used for building modern web APIs.",
+        "reference_context": "FastAPI documentation describing its purpose and API endpoints.",
+        "expected_sources": [
+            "data/raw/fastapi/fastapi_basics.md"
+        ],
+        "category": "factual",
+        "should_answer": true
+    },
+    {
+        "id": "Q002",
+        "question": "What is Python?",
+        "expected_answer": "Python is a high-level programming language.",
+        "reference_context": "Python documentation describing Python as a high-level programming language.",
+        "expected_sources": [
+            "data/raw/python/python_basics.md"
+        ],
+        "category": "factual",
+        "should_answer": true
+    },
+    {
+        "id": "Q003",
+        "question": "What is LangChain?",
+        "expected_answer": "LangChain provides components for building applications powered by large language models.",
+        "reference_context": "LangChain documentation describing its components and their use in LLM applications.",
+        "expected_sources": [
+            "data/raw/langchain/langchain_basics.md"
+        ],
+        "category": "factual",
+        "should_answer": true
+    },
+    {
+        "id": "Q004",
+        "question": "Who is the president of France?",
+        "expected_answer": "I could not find sufficient information in the provided documentation.",
+        "reference_context": "",
+        "expected_sources": [],
+        "category": "unanswerable",
+        "should_answer": false
+    }
+]
