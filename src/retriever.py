@@ -1,13 +1,24 @@
+import logging
+
 from langchain_chroma import Chroma
 
-from src.config import CHROMA_DB_DIR, CHROMA_COLLECTION_NAME
+from src.config import (
+    CHROMA_DB_DIR,
+    CHROMA_COLLECTION_NAME
+)
+
 from src.embeddings import get_embedding_model
 
 
+logger = logging.getLogger(__name__)
+
+
+# --------------------------------------------------
+# VECTOR STORE CONNECTION
+# --------------------------------------------------
+
 def get_vector_store():
-    """
-    Connect to the existing persistent ChromaDB collection.
-    """
+
     embeddings = get_embedding_model()
 
     vector_store = Chroma(
@@ -19,19 +30,28 @@ def get_vector_store():
     return vector_store
 
 
-def retrieve_documents(query: str, k: int = 3):
-    """
-    Retrieve the top-k most relevant document chunks.
-    """
+# --------------------------------------------------
+# DOCUMENT RETRIEVAL
+# --------------------------------------------------
 
-    if not query or not query.strip():
-        raise ValueError("Query cannot be empty.")
+def retrieve_documents(query: str, k: int = 3):
+
+    if not isinstance(query, str) or not query.strip():
+        raise ValueError("Query must be a non-empty string.")
+
+    if not isinstance(k, int) or isinstance(k, bool) or k <= 0:
+        raise ValueError("k must be a positive integer.")
 
     vector_store = get_vector_store()
 
     results = vector_store.similarity_search_with_score(
-        query=query,
+        query=query.strip(),
         k=k
+    )
+
+    logger.info(
+        "Retrieved %d document chunks for query.",
+        len(results)
     )
 
     return results

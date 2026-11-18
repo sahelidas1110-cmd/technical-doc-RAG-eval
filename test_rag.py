@@ -3,6 +3,8 @@ from src.rag_pipeline import generate_answer
 
 questions = [
     "What is FastAPI used for?",
+    "What is the difference between a Python list and a tuple?",
+    "What is the purpose of text splitters in LangChain?",
     "Who is the president of France?"
 ]
 
