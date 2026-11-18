@@ -16,10 +16,19 @@ EMBEDDING_MODEL = os.getenv(
     "text-embedding-3-small"
 )
 
+CHAT_MODEL = os.getenv(
+    "OPENAI_CHAT_MODEL",
+    "gpt-4.1-mini"
+)
+
 CHUNK_SIZE = int(os.getenv("CHUNK_SIZE", 800))
 
 CHUNK_OVERLAP = int(
     os.getenv("CHUNK_OVERLAP", 120)
+)
+
+MAX_RETRIEVAL_DISTANCE = float(
+    os.getenv("MAX_RETRIEVAL_DISTANCE", "1.0")
 )
 
 CHROMA_COLLECTION_NAME = os.getenv(
