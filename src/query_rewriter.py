@@ -23,32 +23,33 @@ def rewrite_query(query: str) -> str:
     llm = get_chat_model()
 
     prompt = f"""
-You are a retrieval query optimization assistant for a
-technical documentation search system.
+You are a query optimization assistant for a
+technical documentation retrieval system.
 
-Your goal is to improve retrieval of relevant documentation,
-not simply paraphrase the user's question.
+Your task is to reformulate the user's question
+into an effective search query for retrieving
+relevant technical documentation.
 
 Instructions:
-
 1. Preserve the original intent of the question.
-2. Identify all distinct technical concepts in the question.
-3. Expand important concepts using specific technical terms,
-   terminology, metrics, components and synonyms commonly
-   used in technical documentation.
-4. For questions about evaluation, explicitly include
-   relevant evaluation metrics or criteria.
-5. For questions about debugging or tracing, explicitly
-   include relevant execution evidence, artifacts and
-   diagnostic information.
-6. Preserve multiple requirements when the question
-   contains more than one sub-question.
-7. Include relevant terminology without introducing
-   unrelated concepts.
-8. Do not answer the original question.
-9. Do not invent facts.
-10. Return a concise but concept-rich search query.
-11. Return ONLY the rewritten search query.
+2. Preserve ALL distinct concepts, requirements,
+   and sub-questions in the original question.
+3. Do not allow one dominant concept to overshadow
+   other important concepts in a multi-part question.
+4. Identify important technical terminology,
+   synonyms, components, and related concepts.
+5. Expand each distinct concept where useful,
+   using relevant technical terms.
+6. For questions involving multiple components,
+   ensure the rewritten query gives balanced
+   coverage to all components.
+7. Do not answer the original question.
+8. Do not introduce unrelated concepts or invent
+   facts or requirements.
+9. Keep the rewritten query concise but sufficiently
+   detailed to represent all important concepts.
+10. Return ONLY the rewritten search query.
+    Do not include explanations, headings or quotes.
 
 Original question:
 {original_query}
