@@ -649,6 +649,20 @@ MRR =
 \frac{1}{rank_i}
 \]
 
+**Example:**
+
+If the first relevant document appears at rank 4, the
+reciprocal rank for that query is:
+
+\[
+RR = \frac{1}{4} = 0.25
+\]
+
+MRR evaluates how highly the first relevant result is
+ranked. A higher reciprocal rank indicates that the
+first relevant result appears closer to the top of the
+retrieval list.
+
 **Normalized Discounted Cumulative Gain (NDCG)**
 
 Evaluates the quality of ranked retrieval results while considering their relevance and position.
