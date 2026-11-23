@@ -1,5 +1,6 @@
 import logging
 
+from langsmith import traceable
 from langchain_chroma import Chroma
 
 from src.config import (
@@ -34,6 +35,14 @@ def get_vector_store():
 # DOCUMENT RETRIEVAL
 # --------------------------------------------------
 
+@traceable(
+    name="retrieve_documents",
+    tags=["rag", "retrieval", "vector-search"],
+    metadata={
+        "vector_store": "ChromaDB",
+        "top_k": 3
+    }
+)
 def retrieve_documents(query: str, k: int = 3):
 
     if not isinstance(query, str) or not query.strip():

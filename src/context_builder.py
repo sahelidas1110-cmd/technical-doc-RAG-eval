@@ -1,5 +1,5 @@
 import logging
-
+from langsmith import traceable
 
 logger = logging.getLogger(__name__)
 
@@ -8,6 +8,13 @@ logger = logging.getLogger(__name__)
 # CONTEXT BUILDER
 # --------------------------------------------------
 
+@traceable(
+    name="build_context",
+    tags=["rag", "context-construction"],
+    metadata={
+        "component": "context-builder"
+    }
+)
 def build_context(retrieved_documents):
 
     if not retrieved_documents:

@@ -1,5 +1,7 @@
 import logging
 
+from langsmith import traceable
+
 from src.retriever import retrieve_documents
 from src.context_builder import build_context
 from src.prompt_template import get_rag_prompt
@@ -14,6 +16,18 @@ logger = logging.getLogger(__name__)
 # RAG ANSWER GENERATION
 # --------------------------------------------------
 
+@traceable(
+    name="generate_answer",
+    tags=["rag", "retrieval", "answer-generation"],
+    metadata={
+        "pipeline": "technical-doc-RAG-eval",
+        "embedding_model": "text-embedding-3-large",
+        "chunk_size": 400,
+        "chunk_overlap": 80,
+        "top_k": 3,
+        "retrieval_threshold": 1.05
+    }
+)
 def generate_answer(question: str):
 
     if not isinstance(question, str) or not question.strip():
