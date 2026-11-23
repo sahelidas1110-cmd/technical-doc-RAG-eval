@@ -155,3 +155,87 @@ on these results.
 Full evaluation report:
 
 evaluation/reports/deepeval_report_85_20261123_132636.json
+
+=============================================================
+
+# DeepEval Failure Analysis — Final Verified Run
+
+## Evaluation Summary
+
+- Dataset: 85 answerable questions
+- Evaluation model: gpt-4.1-mini
+- Metric threshold: 0.7
+- Overall pass rate: 82.35% (70/85)
+- Questions with at least one failed metric: 15
+- Evaluation cost: $0.5131432
+
+## Failure Distribution
+
+| Metric | Failures |
+|---|---:|
+| Contextual Precision | 10 |
+| Contextual Recall | 6 |
+| Answer Correctness | 3 |
+
+Failure counts overlap because a question can fail multiple metrics.
+
+## 1. Retrieval Ranking Issues
+
+Several questions had relevant chunks retrieved, but irrelevant or less relevant chunks were ranked higher.
+
+Examples:
+- Q009 — Loop else and break behavior
+- Q013 — Python file modes (`w` vs `a`)
+- Q033 — Multi-query retrieval
+- Q048 — RAG evaluation and regression detection
+- Q056 — Pydantic field and model validators
+- Q067 — OAuth2 token validation
+- Q077 — OAuth2 scopes
+- Q081 — FastAPI documentation endpoints
+- Q087 — Query parameter validation
+- Q092 — FastAPI testing and dependency injection
+
+### Observation
+
+The presence of relevant information in the retrieved context does not guarantee high contextual precision. Retrieval ranking remains an improvement area.
+
+## 2. Context Completeness Issues
+
+Questions that failed Contextual Recall:
+
+- Q014 — Python module execution and `__name__`
+- Q056 — Field-validator examples and explanation
+- Q067 — JWT validation and account checks
+- Q082 — Complete OAuth2 password-form and JWT flow
+- Q083 — Middleware and exception-handler responsibilities
+- Q092 — Mocking external dependencies in endpoint tests
+
+### Observation
+
+Some retrieved contexts supported only a portion of the expected answer. Multi-part questions particularly exposed missing contextual information.
+
+## 3. Answer Correctness Issues
+
+- Q048 — Missing evaluation dimensions such as latency, cost, and separate retrieval/generation evaluation.
+- Q045 — Incomplete comparison between offline and online evaluation.
+- Q091 — Asynchronous testing details were incomplete; HTTPX AsyncClient and ASGITransport were expected.
+
+### Observation
+
+Answer correctness failures were primarily associated with incomplete coverage of the requested concepts or procedural details.
+
+## 4. Improvement Opportunities
+
+1. Investigate retrieval-ranking errors.
+2. Improve contextual coverage for multi-part questions.
+3. Improve answer completeness for comparison and procedural questions.
+4. Use failed questions as regression-test cases for future experiments.
+5. Evaluate future changes using the same dataset and metrics.
+
+## 5. Conclusion
+
+The verified evaluation achieved an overall pass rate of 82.35%.
+
+Faithfulness and answer relevancy achieved 100% pass rates, while contextual precision, contextual recall, and answer correctness revealed opportunities for further improvement.
+
+The failure analysis provides a structured basis for future retrieval, context-construction, and answer-generation experiments.

@@ -4,7 +4,7 @@ from pathlib import Path
 from collections import Counter
 
 REPORT_PATH = Path(
-    "evaluation/reports/deepeval_report_85_20261123_132636.json"
+    "evaluation/reports/deepeval_report_85_20261124_004459.json"
 )
 
 
