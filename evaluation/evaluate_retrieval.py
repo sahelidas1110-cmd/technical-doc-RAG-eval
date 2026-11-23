@@ -1,8 +1,9 @@
-
 import json
 import logging
+import os
 from pathlib import Path
 from statistics import mean
+
 
 from src.retriever import retrieve_documents
 from evaluation.retrieval_metrics import calculate_retrieval_metrics
@@ -16,8 +17,11 @@ PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 DATASET_PATH = PROJECT_ROOT / "evaluation" / "golden_dataset.json"
 
-REPORT_PATH = (
-    PROJECT_ROOT / "evaluation" / "retrieval_report.json"
+REPORT_PATH = Path(
+    os.getenv(
+        "RETRIEVAL_REPORT_PATH",
+        str(PROJECT_ROOT / "evaluation" / "retrieval_report.json")
+    )
 )
 
 K = 3

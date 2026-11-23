@@ -1,0 +1,137 @@
+[
+  {
+    "id": "Q004",
+    "question": "Who is the president of France?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q049",
+    "question": "What is the current monthly subscription price of LangSmith for an individual developer?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q054",
+    "question": "What is the maximum number of tools that a LangChain agent can register in a single application according to the project documentation?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q064",
+    "question": "What exact maximum JWT access-token lifetime, in minutes, does the project documentation require for every FastAPI production application?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q069",
+    "question": "What exact number of requests per minute must every FastAPI application in this project allow before applying rate limiting?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q074",
+    "question": "According to the project documentation, how many Uvicorn workers must every production FastAPI application use, regardless of its CPU and memory resources?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q079",
+    "question": "What exact number of days must a FastAPI application retain every user's access-token and API request logs under the project's production deployment policy?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q084",
+    "question": "What exact JWT signing-key rotation interval, in days, does the project require every production FastAPI application to follow?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q089",
+    "question": "What exact minimum password length, in characters, must every user account in the project's FastAPI applications enforce?",
+    "expected_answer": "I could not find sufficient information in the provided documentation.",
+    "reference_context": "",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q093",
+    "question": "What is the exact maximum file-upload size, in megabytes, guaranteed by the FastAPI application described in this documentation corpus?",
+    "expected_answer": "The documentation corpus does not specify an exact maximum file-upload size in megabytes, so this value cannot be determined from the available sources.",
+    "reference_context": "The FastAPI documentation covers request validation, middleware, security, testing, and deployment, but it does not define a guaranteed maximum file-upload size in megabytes.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q094",
+    "question": "What exact uptime percentage does the documentation guarantee as the service-level agreement for a deployed FastAPI application?",
+    "expected_answer": "The documentation does not state a guaranteed uptime percentage or service-level agreement for a deployed FastAPI application.",
+    "reference_context": "The testing and deployment documentation discusses deployment, servers, containers, scaling, and monitoring, but does not define an uptime guarantee or service-level agreement percentage.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q097",
+    "question": "What exact number of simultaneous requests per second is guaranteed to be supported by the FastAPI application described in the documentation?",
+    "expected_answer": "The documentation does not specify or guarantee an exact requests-per-second capacity. It discusses deployment, workers, scaling, and monitoring, but the supported throughput would need to be measured for a particular application and environment.",
+    "reference_context": "The documentation discusses workers, scaling, workload, and monitoring but does not provide a guaranteed requests-per-second throughput figure.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q098",
+    "question": "Which exact cloud provider and geographic region are mandated for deploying the FastAPI application in this documentation corpus?",
+    "expected_answer": "The documentation does not mandate a specific cloud provider or geographic deployment region.",
+    "reference_context": "The deployment documentation mentions cloud hosting platforms as an option but does not mandate a provider or specify a geographic region.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q099",
+    "question": "What is the exact maximum number of database connections that the FastAPI application is configured to maintain in its connection pool?",
+    "expected_answer": "The documentation does not specify a database connection-pool configuration or an exact maximum number of database connections.",
+    "reference_context": "The documentation discusses dependency injection, database-related testing, deployment, and external services, but it does not define a database connection-pool size.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  },
+  {
+    "id": "Q100",
+    "question": "What exact request timeout, in seconds, is guaranteed for every endpoint in the documented FastAPI application?",
+    "expected_answer": "The documentation does not define a universal request timeout value in seconds for every endpoint.",
+    "reference_context": "The documentation covers FastAPI endpoint behavior, middleware, testing, and deployment, but does not specify a guaranteed request timeout shared by every endpoint.",
+    "expected_sources": [],
+    "category": "unanswerable",
+    "should_answer": false
+  }
+]

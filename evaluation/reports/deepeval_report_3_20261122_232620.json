@@ -1,0 +1,138 @@
+{
+    "evaluation_timestamp": "2026-11-22T23:26:20.888641",
+    "dataset_size": 3,
+    "evaluation_limit": 3,
+    "model": "gpt-4.1-mini",
+    "metric_threshold": 0.7,
+    "results": [
+        {
+            "id": "Q003",
+            "input": "What is LangChain?",
+            "actual_output": "LangChain is a framework for developing applications powered by large language models [Source 1].",
+            "expected_output": "LangChain provides components for building applications powered by large language models.",
+            "metrics": [
+                {
+                    "metric": "Contextual Precision",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first node in the retrieval contexts clearly explains that LangChain is a framework for developing applications powered by large language models, which directly answers the input. The subsequent nodes, ranked lower, only provide URLs without descriptive content, making them less relevant. This perfect ranking of the relevant node above the irrelevant ones justifies the top score."
+                },
+                {
+                    "metric": "Contextual Recall",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first sentence in the expected output is fully supported by node 1 in the retrieval context, which clearly states that LangChain is a framework for developing applications powered by large language models. There are no unsupported sentences, making the recall complete and accurate."
+                },
+                {
+                    "metric": "Faithfulness",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating complete alignment and faithfulness."
+                },
+                {
+                    "metric": "Answer Relevancy",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the response directly and accurately addresses the question about LangChain without any irrelevant information."
+                },
+                {
+                    "metric": "Answer Correctness [GEval]",
+                    "score": 0.7447569218751684,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The Actual Output correctly identifies LangChain as a framework for developing applications powered by large language models, aligning well with the Expected Output's description. However, it adds a source reference not present in the Expected Output and slightly differs in phrasing by calling it a 'framework' rather than focusing on 'components,' which is a minor deviation but does not reduce factual accuracy or relevance."
+                }
+            ]
+        },
+        {
+            "id": "Q002",
+            "input": "What is Python?",
+            "actual_output": "I could not find sufficient information in the provided documentation.",
+            "expected_output": "Python is a high-level programming language.",
+            "metrics": [
+                {
+                    "metric": "Contextual Precision",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first node in the retrieval contexts clearly defines Python as a high-level programming language, directly addressing the input. The subsequent nodes, ranked lower, discuss related but less directly relevant topics such as object-oriented features and iteration, which justifies their lower ranking and results in perfect contextual precision."
+                },
+                {
+                    "metric": "Contextual Recall",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first sentence in the expected output is fully supported by the information in node 1 of the retrieval context, which clearly states that Python is a high-level programming language. There are no unsupported sentences, making the recall complete and accurate."
+                },
+                {
+                    "metric": "Faithfulness",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating complete alignment and faithfulness."
+                },
+                {
+                    "metric": "Answer Relevancy",
+                    "score": 0.0,
+                    "threshold": 0.7,
+                    "success": false,
+                    "reason": "The score is 0.00 because the output fails to provide any information about Python, instead indicating a lack of information, which is irrelevant to the question asked."
+                },
+                {
+                    "metric": "Answer Correctness [GEval]",
+                    "score": 0.0,
+                    "threshold": 0.7,
+                    "success": false,
+                    "reason": "The Actual Output fails to answer the question 'What is Python?' by abstaining instead of providing the key information that Python is a high-level programming language, as stated in the Expected Output."
+                }
+            ]
+        },
+        {
+            "id": "Q001",
+            "input": "What is FastAPI used for?",
+            "actual_output": "FastAPI is a Python framework for building modern web APIs. It allows clients to interact with an application through specific URLs called API endpoints, supporting HTTP methods such as GET, POST, PUT, and DELETE [Source 1].",
+            "expected_output": "FastAPI is a Python framework used for building modern web APIs.",
+            "metrics": [
+                {
+                    "metric": "Contextual Precision",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first node in retrieval contexts clearly explains that FastAPI is a Python framework for building modern web APIs, directly addressing the input question. The subsequent nodes, ranked lower, discuss testing and deployment aspects unrelated to the core usage of FastAPI, appropriately placing irrelevant information after relevant content."
+                },
+                {
+                    "metric": "Contextual Recall",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the first sentence in the expected output exactly matches the information found in node 1 of the retrieval context, with no conflicting or missing details."
+                },
+                {
+                    "metric": "Faithfulness",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because there are no contradictions between the actual output and the retrieval context, indicating complete alignment and faithfulness."
+                },
+                {
+                    "metric": "Answer Relevancy",
+                    "score": 1.0,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The score is 1.00 because the answer directly addresses the question about FastAPI's use without any irrelevant information, providing a clear and focused response."
+                },
+                {
+                    "metric": "Answer Correctness [GEval]",
+                    "score": 0.8981861141692296,
+                    "threshold": 0.7,
+                    "success": true,
+                    "reason": "The Actual Output correctly identifies FastAPI as a Python framework for building modern web APIs, directly answering the question. It also adds relevant details about API endpoints and HTTP methods, which, while not in the Expected Output, enhance the explanation without introducing errors. The response fully covers the key point from the Expected Output and is factually accurate."
+                }
+            ]
+        }
+    ]
+}

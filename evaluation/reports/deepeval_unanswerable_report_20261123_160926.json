@@ -1,0 +1,216 @@
+{
+  "evaluation_timestamp": "2026-11-23T16:09:26.913644",
+  "evaluation_type": "unanswerable_abstention_evaluation",
+  "model": "gpt-4.1-mini",
+  "metric": "Abstention Correctness",
+  "threshold": 0.7,
+  "dataset_size": 15,
+  "passed": 15,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "results": [
+    {
+      "id": "Q004",
+      "question": "Who is the president of France?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/python/decorators.md",
+        "data/raw/langchain/lcel.md",
+        "data/raw/python/functions.md"
+      ],
+      "score": 1.0,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly acknowledges the absence of information about the president of France in the provided retrieval context without fabricating any details. It does not introduce unsupported facts or make confident claims beyond the context, adhering strictly to the evaluation criteria."
+    },
+    {
+      "id": "Q049",
+      "question": "What is the current monthly subscription price of LangSmith for an individual developer?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/agents.md"
+      ],
+      "score": 0.9731058578630003,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the requested subscription price information is not found in the provided retrieval context, adhering strictly to the available data without fabricating or assuming details. It explicitly acknowledges the absence of the information, aligning perfectly with the evaluation steps."
+    },
+    {
+      "id": "Q054",
+      "question": "What is the maximum number of tools that a LangChain agent can register in a single application according to the project documentation?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/agents.md",
+        "data/raw/langchain/agents.md"
+      ],
+      "score": 0.9924141819978756,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the provided documentation does not contain information about the maximum number of tools a LangChain agent can register, adhering strictly to the retrieval context without introducing unsupported facts or assumptions. It explicitly acknowledges the absence of the requested detail, avoiding fabrication or misleading claims."
+    },
+    {
+      "id": "Q064",
+      "question": "What exact maximum JWT access-token lifetime, in minutes, does the project documentation require for every FastAPI production application?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 0.9320821300824609,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the required exact maximum JWT access-token lifetime is not found in the provided documentation, adhering to the retrieval context without fabricating details. It explicitly acknowledges the absence of this information, avoiding unsupported claims. However, it could be improved by clarifying that the context includes examples and security considerations but no explicit policy on token lifetime."
+    },
+    {
+      "id": "Q069",
+      "question": "What exact number of requests per minute must every FastAPI application in this project allow before applying rate limiting?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 1.0,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the exact number of requests per minute is not found in the provided retrieval context, adhering strictly to the information given without fabricating details or unsupported claims."
+    },
+    {
+      "id": "Q074",
+      "question": "According to the project documentation, how many Uvicorn workers must every production FastAPI application use, regardless of its CPU and memory resources?",
+      "actual_output": "The provided documentation does not specify a required or fixed number of Uvicorn workers that every production FastAPI application must use regardless of CPU and memory resources. It only gives an example of starting four worker processes and explains the benefits of using multiple workers, but it does not mandate a specific number for all production applications.\n\nTherefore, based strictly on the provided documentation:\n\n- There is no stated mandatory number of Uvicorn workers for production FastAPI applications.\n- The example shows using 4 workers, but this is not presented as a requirement.\n- The documentation notes that each worker has its own memory space, which is important for resource considerations, but does not prescribe a fixed worker count.\n\nHence, the documentation does not specify a fixed number of workers to use in production regardless of CPU and memory resources [Source 1], [Source 3].",
+      "retrieved_sources": [
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/testing_deployment.md"
+      ],
+      "score": 0.9989013057369407,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response accurately reflects the retrieval context by stating that no mandatory fixed number of Uvicorn workers is specified for production FastAPI applications regardless of CPU and memory resources. It correctly identifies the example of four workers as illustrative rather than a requirement, acknowledges the memory considerations mentioned, and avoids introducing unsupported claims or fabricated details."
+    },
+    {
+      "id": "Q079",
+      "question": "What exact number of days must a FastAPI application retain every user's access-token and API request logs under the project's production deployment policy?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 0.9982013790037909,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the required information about the exact number of days for retaining access tokens and API request logs is not found in the provided retrieval context. It does not introduce unsupported facts or fabricate details, adhering strictly to the available information and acknowledging the absence of the requested data."
+    },
+    {
+      "id": "Q084",
+      "question": "What exact JWT signing-key rotation interval, in days, does the project require every production FastAPI application to follow?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 0.9982013790037909,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the required JWT signing-key rotation interval is not found in the provided context, adhering strictly to the information given without fabricating details or unsupported claims."
+    },
+    {
+      "id": "Q089",
+      "question": "What exact minimum password length, in characters, must every user account in the project's FastAPI applications enforce?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 0.9939913349825991,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the required minimum password length is not found in the provided retrieval context, adhering strictly to the information given without fabricating details or unsupported claims."
+    },
+    {
+      "id": "Q093",
+      "question": "What is the exact maximum file-upload size, in megabytes, guaranteed by the FastAPI application described in this documentation corpus?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/routing.md"
+      ],
+      "score": 0.9622459331201855,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the documentation does not provide information about the maximum file-upload size, adhering strictly to the retrieval context without introducing unsupported facts or assumptions. It explicitly acknowledges the absence of the requested detail, avoiding fabrication or misleading claims."
+    },
+    {
+      "id": "Q094",
+      "question": "What exact uptime percentage does the documentation guarantee as the service-level agreement for a deployed FastAPI application?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "score": 0.9982013790037909,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the documentation does not provide the exact uptime percentage for the service-level agreement, adhering strictly to the retrieval context which contains no such information. It avoids fabricating details or making unsupported claims, and explicitly acknowledges the absence of the requested data."
+    },
+    {
+      "id": "Q097",
+      "question": "What exact number of simultaneous requests per second is guaranteed to be supported by the FastAPI application described in the documentation?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/routing.md"
+      ],
+      "score": 0.9962673112655871,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the documentation does not provide information about the exact number of simultaneous requests per second supported by the FastAPI application, adhering strictly to the retrieval context without fabricating details or unsupported claims."
+    },
+    {
+      "id": "Q098",
+      "question": "Which exact cloud provider and geographic region are mandated for deploying the FastAPI application in this documentation corpus?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/routing.md",
+        "data/raw/fastapi/testing_deployment.md"
+      ],
+      "score": 1.0,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the documentation does not provide specific information about the mandated cloud provider or geographic region for deployment, adhering strictly to the retrieval context without introducing unsupported details or assumptions."
+    },
+    {
+      "id": "Q099",
+      "question": "What is the exact maximum number of database connections that the FastAPI application is configured to maintain in its connection pool?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/routing.md",
+        "data/raw/fastapi/dependency_injection.md"
+      ],
+      "score": 1.0,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that the requested information about the maximum number of database connections is not found in the provided context, adhering strictly to the retrieval context without introducing unsupported facts or assumptions."
+    },
+    {
+      "id": "Q100",
+      "question": "What exact request timeout, in seconds, is guaranteed for every endpoint in the documented FastAPI application?",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/dependency_injection.md"
+      ],
+      "score": 0.990465053510089,
+      "threshold": 0.7,
+      "success": true,
+      "reason": "The response correctly states that there is insufficient information in the provided documentation to determine the exact request timeout for every endpoint. It does not introduce unsupported facts or fabricate details, adhering strictly to the retrieval context which lacks any mention of request timeout values."
+    }
+  ]
+}

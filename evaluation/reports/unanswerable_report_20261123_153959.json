@@ -1,0 +1,233 @@
+{
+  "evaluation_timestamp": "2026-11-23T15:39:59.384792",
+  "dataset_size": 15,
+  "evaluation_type": "unanswerable_questions",
+  "results": [
+    {
+      "id": "Q004",
+      "question": "Who is the president of France?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/python/decorators.md",
+        "data/raw/langchain/lcel.md",
+        "data/raw/python/functions.md"
+      ],
+      "retrieved_context": [
+        "A decorator can also accept arguments.\n\nThis requires an additional outer function.\n\nExample:\n\n```python\nfrom functools import wraps\n\ndef repeat(times):\n\n    def decorator(func):\n\n        @wraps(func)\n        def wrapper(*args, **kwargs):\n\n            for _ in range(times):\n                func(*args, **kwargs)\n\n        return wrapper\n\n    return decorator\n\n@repeat(3)\ndef greet():\n    print(\"Hello!\")\n\ngreet()\n```\n\nOutput:\n\n```text\nHello!\nHello!\nHello!\n```\n\nIn this example:\n\n- `repeat()` is the decorator factory.\n- `decorator()` receives the original function.\n- `wrapper()` controls repeated execution.\n- `@repeat(3)` configures the decorator.\n\n## 11. Multiple Decorators\n\nPython allows multiple decorators to be applied to a single function.\n\nExample:\n\n```python\ndef decorator_one(func):",
+        "# 8. Invoke the chain\nresponse = rag_chain.invoke(\n    \"What is FastAPI?\"\n)\n\nprint(response)\n```\n\n### Understanding the RAG Chain\n\nThe first dictionary creates a parallel mapping:\n\n```python\n{\n    \"context\": retriever | format_docs,\n    \"question\": RunnablePassthrough()\n}\n```\n\nTwo operations happen using the original question:\n\n- The retriever searches the vector database and the formatter converts retrieved documents into context.\n- RunnablePassthrough preserves the original question.\n\nThe resulting dictionary contains:\n\n```python\n{\n    \"context\": \"Retrieved document content...\",\n    \"question\": \"What is FastAPI?\"\n}\n```\n\nThe dictionary is then passed to the prompt template.\n\nThe prompt is passed to the LLM, and StrOutputParser converts the response into a string.",
+        "---\ntitle: Python Functions\ndomain: Python\nsource_url: https://docs.python.org/3/tutorial/controlflow.html#defining-functions\ndocument_type: technical_documentation\nversion: current\n---\n\n# Python Functions\n\n## 1. Introduction to Functions\n\nA function is a reusable block of code designed to perform a specific task.\n\nFunctions help organize code into smaller, manageable components. They improve code reusability, readability, and maintainability.\n\nPython provides built-in functions such as `print()`, `len()`, `sum()`, and `type()`.\n\nPython also allows developers to define their own functions using the `def` keyword.\n\n## 2. Defining and Calling a Function\n\nA function is defined using the `def` keyword, followed by the function name and parentheses.\n\nExample:"
+      ]
+    },
+    {
+      "id": "Q049",
+      "question": "What is the current monthly subscription price of LangSmith for an individual developer?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/agents.md"
+      ],
+      "retrieved_context": [
+        "LangSmith supports code-based and LLM-based evaluation approaches.\n\n### 17.5 Online Monitoring\n\nLangSmith can also support online evaluation of production traces.\n\nThis helps identify quality changes and emerging failure patterns after deployment.\n\n## 18. Setting Up LangSmith Tracing\n\nLangSmith tracing can be enabled using environment variables.\n\nInstall the package:\n\n```powershell\nuv add langsmith\n```\n\nConfigure the environment variables in `.env`:\n\n```text\nLANGSMITH_TRACING=true\nLANGSMITH_API_KEY=your_langsmith_api_key\nLANGSMITH_PROJECT=technical-doc-rag-eval\n```\n\nLoad the environment variables in Python:\n\n```python\nfrom dotenv import load_dotenv\n\nload_dotenv()\n```",
+        "## References\n\n- LangChain Tools: https://docs.langchain.com/oss/python/langchain/tools\n- LangChain Agents: https://docs.langchain.com/oss/python/langchain/agents\n- LangChain Core Tool Reference: https://reference.langchain.com/python/langchain-core/tools/\n- LangSmith Evaluation Concepts: https://docs.langchain.com/langsmith/evaluation\n- LangSmith Evaluation Types: https://docs.langchain.com/langsmith/evaluation-types\n- LangSmith Tracing: https://docs.langchain.com/langsmith/observability\n- DeepEval Documentation: https://deepeval.com/docs/getting-started\n- Ragas Documentation: https://docs.ragas.io/\n- pytest Documentation: https://docs.pytest.org/",
+        "## References\n\n- LangChain Agents: https://docs.langchain.com/oss/python/langchain/agents\n- LangChain Learn: https://docs.langchain.com/oss/python/learn\n- LangChain Tools: https://docs.langchain.com/oss/python/langchain/tools\n- LangChain RAG Agent Tutorial: https://docs.langchain.com/oss/python/langchain/rag\n- LangGraph Documentation: https://docs.langchain.com/oss/python/langgraph/overview\n- LangChain Core Tool Reference: https://reference.langchain.com/python/langchain-core/tools/\n- LangSmith Documentation: https://docs.langchain.com/langsmith/home"
+      ]
+    },
+    {
+      "id": "Q054",
+      "question": "What is the maximum number of tools that a LangChain agent can register in a single application according to the project documentation?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/langchain/tools_and_evaluation.md",
+        "data/raw/langchain/agents.md",
+        "data/raw/langchain/agents.md"
+      ],
+      "retrieved_context": [
+        "LangChain provides interfaces for defining tools and composing them into applications. LangSmith provides tracing and evaluation capabilities for testing and monitoring those applications.\n\n## 2. What Are Tools?\n\nA tool is a function that an LLM application or agent can invoke to perform a specific operation.\n\nExamples include:\n\n- Calculator.\n- Web search.\n- Database query.\n- File search.\n- API request.\n- Document retrieval.\n- Data analysis.\n- Email operations.\n\nA tool allows an LLM application to interact with external systems.\n\nThe LLM generally decides when a tool should be used, while the application or agent runtime executes the actual operation.\n\n## 3. Anatomy of a LangChain Tool\n\nA well-designed tool generally has the following components:",
+        "This is commonly called the **agent loop**.\n\n## 4. What Are Tools in LangChain?\n\nTools are functions that an AI agent can use to interact with external systems or perform specific operations.\n\nExamples include:\n\n- Calculator functions.\n- Weather APIs.\n- Database queries.\n- Web searches.\n- File operations.\n- Python execution.\n- Internal company APIs.\n- Document retrieval.\n\nA tool provides the agent with a capability that the LLM does not directly perform by itself.\n\nFor example, an LLM can decide that it needs current inventory information, but a database tool is required to retrieve the actual inventory.\n\n### Components of a Tool\n\nA LangChain tool generally has:\n\n1. A name.\n2. A description.\n3. Input parameters.\n4. An implementation.\n5. A return value.",
+        "### Agent Execution Flow\n\n```text id=\"9zv3gk\"\n             User Request\n                  |\n                  v\n             AI Agent\n                  |\n                  v\n              LLM Model\n                  |\n                  v\n          Decide Next Action\n                  |\n             +----+----+\n             |         |\n             v         v\n        Call Tool   Direct Answer\n             |\n             v\n       Execute Tool\n             |\n             v\n        Tool Result\n             |\n             v\n          LLM Model\n             |\n             v\n        Final Answer\n```\n\nThe agent can repeat the tool-calling cycle when additional actions are required.\n\nThis is commonly called the **agent loop**.\n\n## 4. What Are Tools in LangChain?"
+      ]
+    },
+    {
+      "id": "Q064",
+      "question": "What exact maximum JWT access-token lifetime, in minutes, does the project documentation require for every FastAPI production application?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "If confidentiality is required, use an appropriate encryption mechanism rather than assuming a signed JWT hides its contents.\n\n## 9. Installing JWT Dependencies\n\nFastAPI's current JWT tutorial uses PyJWT and pwdlib.\n\nInstall them:\n\n```powershell\nuv add pyjwt\nuv add \"pwdlib[argon2]\"\n```\n\nFor the OAuth2 password-form example later in this document, also install:\n\n```powershell\nuv add python-multipart\n```\n\n`python-multipart` is required to parse form data used by `OAuth2PasswordRequestForm`.\n\n## 10. Creating a JWT Access Token\n\nPyJWT provides functions to encode and decode JWT tokens.\n\nExample:\n\n```python\nimport jwt\nfrom datetime import datetime, timedelta, timezone\n\nSECRET_KEY = \"replace_with_a_secure_secret\"\nALGORITHM = \"HS256\"\n\ndef create_access_token(data: dict):",
+        "The decoding process verifies the signature and checks registered claims such as expiration when present.\n\nFor production use, validation should also enforce the expected issuer and audience when those claims are part of the application's token contract.\n\nThe server should never trust a token merely because it can decode its payload.\n\n## 12. Protecting Endpoints Using JWT and Depends()\n\nWe can combine:\n\n- `OAuth2PasswordBearer`\n- JWT validation\n- FastAPI Dependency Injection\n\nThis allows us to protect endpoints with reusable authentication logic.\n\nExample:\n\n```python\nfrom typing import Annotated\nimport jwt\n\nfrom fastapi import Depends, FastAPI, HTTPException, status\nfrom fastapi.security import OAuth2PasswordBearer\nfrom jwt.exceptions import InvalidTokenError\n\napp = FastAPI()",
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization"
+      ]
+    },
+    {
+      "id": "Q069",
+      "question": "What exact number of requests per minute must every FastAPI application in this project allow before applying rate limiting?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization"
+      ]
+    },
+    {
+      "id": "Q074",
+      "question": "According to the project documentation, how many Uvicorn workers must every production FastAPI application use, regardless of its CPU and memory resources?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "The provided documentation does not specify a required or fixed number of Uvicorn workers that every production FastAPI application must use regardless of CPU and memory resources. It only gives an example of starting four worker processes and explains the benefits of using multiple workers, but it does not mandate a specific number for all production applications.\n\nTherefore, based strictly on the provided documentation:\n\n- There is no stated mandatory number of Uvicorn workers for production FastAPI applications.\n- The example shows using 4 workers, but this is not presented as a requirement.\n- The documentation notes that each worker has its own memory space, which is important for resource considerations, but does not prescribe a fixed worker count.\n\nHence, the documentation does not specify a fixed number of workers to use in production regardless of CPU and memory resources [Source 1], [Source 3].",
+      "retrieved_sources": [
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/testing_deployment.md"
+      ],
+      "retrieved_context": [
+        "For production-oriented execution.\n\nThe FastAPI CLI uses Uvicorn underneath.\n\n## 18. Understanding Workers\n\nWorkers are separate server processes that can handle requests concurrently.\n\nUvicorn supports multiple worker processes.\n\nExample:\n\n```powershell\nuv run uvicorn app.main:app --host 0.0.0.0 --port 8000 --workers 4\n```\n\nThis starts four worker processes.\n\nBenefits include:\n\n- Better use of multiple CPU cores.\n- Handling requests across multiple processes.\n- Increased application capacity for suitable workloads.\n\nHowever, each worker generally has its own memory space.\n\nThis is important for AI applications because loading a large machine learning model or embedding model separately in each worker can consume substantial memory.",
+        "Uvicorn is an ASGI server used to run FastAPI applications.\n\nInstall FastAPI with its standard optional dependencies:\n\n```powershell\nuv add \"fastapi[standard]\"\n```\n\nThis includes Uvicorn and other recommended dependencies.\n\nSuppose your project contains:\n\n```text\napp/\n    main.py\n```\n\nAnd `main.py` contains:\n\n```python\nfrom fastapi import FastAPI\n\napp = FastAPI()\n\n@app.get(\"/\")\nasync def home():\n    return {\"message\": \"FastAPI is running\"}\n```\n\nRun the application:\n\n```powershell\nuv run uvicorn app.main:app --reload\n```\n\nExplanation:",
+        "During development, use:\n\n```powershell\nuv run uvicorn app.main:app --reload\n```\n\nThe `--reload` option restarts the server when code changes.\n\nFor production, do not use `--reload`.\n\nA production command can be:\n\n```powershell\nuv run uvicorn app.main:app --host 0.0.0.0 --port 8000\n```\n\nExplanation:\n\n- `--host 0.0.0.0` makes the application listen on all network interfaces.\n- `--port 8000` specifies the listening port.\n- Omitting `--reload` avoids development reload behavior.\n\nFastAPI also provides a CLI:\n\n```powershell\nuv run fastapi dev app/main.py\n```\n\nFor development, and:\n\n```powershell\nuv run fastapi run app/main.py\n```\n\nFor production-oriented execution.\n\nThe FastAPI CLI uses Uvicorn underneath.\n\n## 18. Understanding Workers"
+      ]
+    },
+    {
+      "id": "Q079",
+      "question": "What exact number of days must a FastAPI application retain every user's access-token and API request logs under the project's production deployment policy?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization"
+      ]
+    },
+    {
+      "id": "Q084",
+      "question": "What exact JWT signing-key rotation interval, in days, does the project require every production FastAPI application to follow?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "The decoding process verifies the signature and checks registered claims such as expiration when present.\n\nFor production use, validation should also enforce the expected issuer and audience when those claims are part of the application's token contract.\n\nThe server should never trust a token merely because it can decode its payload.\n\n## 12. Protecting Endpoints Using JWT and Depends()\n\nWe can combine:\n\n- `OAuth2PasswordBearer`\n- JWT validation\n- FastAPI Dependency Injection\n\nThis allows us to protect endpoints with reusable authentication logic.\n\nExample:\n\n```python\nfrom typing import Annotated\nimport jwt\n\nfrom fastapi import Depends, FastAPI, HTTPException, status\nfrom fastapi.security import OAuth2PasswordBearer\nfrom jwt.exceptions import InvalidTokenError\n\napp = FastAPI()",
+        "If confidentiality is required, use an appropriate encryption mechanism rather than assuming a signed JWT hides its contents.\n\n## 9. Installing JWT Dependencies\n\nFastAPI's current JWT tutorial uses PyJWT and pwdlib.\n\nInstall them:\n\n```powershell\nuv add pyjwt\nuv add \"pwdlib[argon2]\"\n```\n\nFor the OAuth2 password-form example later in this document, also install:\n\n```powershell\nuv add python-multipart\n```\n\n`python-multipart` is required to parse form data used by `OAuth2PasswordRequestForm`.\n\n## 10. Creating a JWT Access Token\n\nPyJWT provides functions to encode and decode JWT tokens.\n\nExample:\n\n```python\nimport jwt\nfrom datetime import datetime, timedelta, timezone\n\nSECRET_KEY = \"replace_with_a_secure_secret\"\nALGORITHM = \"HS256\"\n\ndef create_access_token(data: dict):"
+      ]
+    },
+    {
+      "id": "Q089",
+      "question": "What exact minimum password length, in characters, must every user account in the project's FastAPI applications enforce?",
+      "expected_answer": "I could not find sufficient information in the provided documentation.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization",
+        "If the Authorization header is missing or does not contain a bearer token, FastAPI returns an authentication error.\n\n## 7. Password Hashing\n\nPasswords should never be stored as plain text in a database.\n\nInstead, applications should store password hashes.\n\nPassword hashing transforms a password into a value that can be stored and verified later.\n\nA secure password-hashing algorithm is designed to make recovering the original password computationally difficult.\n\n### Hashing vs Encryption\n\n| Hashing | Encryption |\n|---|---|\n| One-way transformation | Reversible using the appropriate key |\n| Used for password storage | Used to protect data that must be recovered |\n| No decryption operation | Decryption is possible with the key |\n| Example: Argon2id | Example: AES |",
+        "## 20. Official References\n\n- FastAPI — Security First Steps: https://fastapi.tiangolo.com/tutorial/security/first-steps/\n- FastAPI — Get Current User: https://fastapi.tiangolo.com/tutorial/security/get-current-user/\n- FastAPI — Simple OAuth2 with Password and Bearer: https://fastapi.tiangolo.com/tutorial/security/simple-oauth2/\n- FastAPI — OAuth2 with JWT: https://fastapi.tiangolo.com/tutorial/security/oauth2-jwt/\n- FastAPI — OAuth2 Scopes: https://fastapi.tiangolo.com/advanced/security/oauth2-scopes/\n- FastAPI — Security Utilities: https://fastapi.tiangolo.com/reference/security/\n- PyJWT Documentation: https://pyjwt.readthedocs.io/\n- Pydantic Password Hashing / pwdlib: https://frankie567.github.io/pwdlib/"
+      ]
+    },
+    {
+      "id": "Q093",
+      "question": "What is the exact maximum file-upload size, in megabytes, guaranteed by the FastAPI application described in this documentation corpus?",
+      "expected_answer": "The documentation corpus does not specify an exact maximum file-upload size in megabytes, so this value cannot be determined from the available sources.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/routing.md"
+      ],
+      "retrieved_context": [
+        "# FastAPI Fundamentals\n\nFastAPI is a Python framework for building\nmodern web APIs.\n\n## API Endpoints\n\nAn API endpoint is a specific URL where\na client can interact with an application.\n\nFastAPI supports HTTP methods such as GET,\nPOST, PUT, and DELETE.\n\n## Request Validation\n\nFastAPI uses Python type hints and Pydantic\nmodels to validate incoming request data.\n\n## Automatic Documentation\n\nFastAPI automatically generates interactive\nAPI documentation using OpenAPI and Swagger UI.",
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization",
+        "## References\n\n- FastAPI First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/\n- FastAPI Bigger Applications: https://fastapi.tiangolo.com/tutorial/bigger-applications/\n- FastAPI Path Operation Configuration: https://fastapi.tiangolo.com/tutorial/path-operation-configuration/\n- FastAPI Metadata and Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/\n- FastAPI Status Codes: https://fastapi.tiangolo.com/tutorial/response-status-code/\n- FastAPI Documentation: https://fastapi.tiangolo.com/"
+      ]
+    },
+    {
+      "id": "Q094",
+      "question": "What exact uptime percentage does the documentation guarantee as the service-level agreement for a deployed FastAPI application?",
+      "expected_answer": "The documentation does not state a guaranteed uptime percentage or service-level agreement for a deployed FastAPI application.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization"
+      ]
+    },
+    {
+      "id": "Q097",
+      "question": "What exact number of simultaneous requests per second is guaranteed to be supported by the FastAPI application described in the documentation?",
+      "expected_answer": "The documentation does not specify or guarantee an exact requests-per-second capacity. It discusses deployment, workers, scaling, and monitoring, but the supported throughput would need to be measured for a particular application and environment.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/routing.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization",
+        "# FastAPI Fundamentals\n\nFastAPI is a Python framework for building\nmodern web APIs.\n\n## API Endpoints\n\nAn API endpoint is a specific URL where\na client can interact with an application.\n\nFastAPI supports HTTP methods such as GET,\nPOST, PUT, and DELETE.\n\n## Request Validation\n\nFastAPI uses Python type hints and Pydantic\nmodels to validate incoming request data.\n\n## Automatic Documentation\n\nFastAPI automatically generates interactive\nAPI documentation using OpenAPI and Swagger UI.",
+        "## References\n\n- FastAPI First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/\n- FastAPI Bigger Applications: https://fastapi.tiangolo.com/tutorial/bigger-applications/\n- FastAPI Path Operation Configuration: https://fastapi.tiangolo.com/tutorial/path-operation-configuration/\n- FastAPI Metadata and Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/\n- FastAPI Status Codes: https://fastapi.tiangolo.com/tutorial/response-status-code/\n- FastAPI Documentation: https://fastapi.tiangolo.com/"
+      ]
+    },
+    {
+      "id": "Q098",
+      "question": "Which exact cloud provider and geographic region are mandated for deploying the FastAPI application in this documentation corpus?",
+      "expected_answer": "The documentation does not mandate a specific cloud provider or geographic deployment region.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/testing_deployment.md",
+        "data/raw/fastapi/routing.md",
+        "data/raw/fastapi/testing_deployment.md"
+      ],
+      "retrieved_context": [
+        "# Testing and Deployment in FastAPI\n\n## 1. Introduction\n\nTesting and deployment are important stages in building production-ready APIs.\n\nTesting helps verify that an API behaves as expected, handles invalid inputs correctly, and returns the appropriate responses.\n\nDeployment makes the API available to users through a server or cloud platform.\n\nFastAPI supports testing through:\n\n- Pytest.\n- TestClient.\n- HTTPX.\n- Dependency overrides.\n- Asynchronous testing.\n\nFor deployment, commonly used tools include:\n\n- Uvicorn.\n- Docker.\n- Docker Compose.\n- Cloud hosting platforms.\n- Reverse proxies and load balancers.\n\n## 2. Testing in FastAPI\n\nTesting is the process of verifying that an application works correctly under different conditions.\n\nFor a FastAPI application, testing can include:",
+        "## References\n\n- FastAPI First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/\n- FastAPI Bigger Applications: https://fastapi.tiangolo.com/tutorial/bigger-applications/\n- FastAPI Path Operation Configuration: https://fastapi.tiangolo.com/tutorial/path-operation-configuration/\n- FastAPI Metadata and Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/\n- FastAPI Status Codes: https://fastapi.tiangolo.com/tutorial/response-status-code/\n- FastAPI Documentation: https://fastapi.tiangolo.com/",
+        "## 28. Official References\n\n- FastAPI — Testing: https://fastapi.tiangolo.com/tutorial/testing/\n- FastAPI — Async Tests: https://fastapi.tiangolo.com/advanced/async-tests/\n- FastAPI — Testing Dependencies with Overrides: https://fastapi.tiangolo.com/advanced/testing-dependencies/\n- FastAPI — Run a Server Manually: https://fastapi.tiangolo.com/deployment/manually/\n- FastAPI — Deployment Concepts: https://fastapi.tiangolo.com/deployment/concepts/\n- FastAPI — Docker Deployment: https://fastapi.tiangolo.com/deployment/docker/\n- Pytest Documentation: https://docs.pytest.org/\n- HTTPX Documentation: https://www.python-httpx.org/\n- Uvicorn Documentation: https://www.uvicorn.org/\n- Docker Documentation: https://docs.docker.com/"
+      ]
+    },
+    {
+      "id": "Q099",
+      "question": "What is the exact maximum number of database connections that the FastAPI application is configured to maintain in its connection pool?",
+      "expected_answer": "The documentation does not specify a database connection-pool configuration or an exact maximum number of database connections.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/routing.md",
+        "data/raw/fastapi/dependency_injection.md"
+      ],
+      "retrieved_context": [
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization",
+        "## References\n\n- FastAPI First Steps: https://fastapi.tiangolo.com/tutorial/first-steps/\n- FastAPI Bigger Applications: https://fastapi.tiangolo.com/tutorial/bigger-applications/\n- FastAPI Path Operation Configuration: https://fastapi.tiangolo.com/tutorial/path-operation-configuration/\n- FastAPI Metadata and Docs URLs: https://fastapi.tiangolo.com/tutorial/metadata/\n- FastAPI Status Codes: https://fastapi.tiangolo.com/tutorial/response-status-code/\n- FastAPI Documentation: https://fastapi.tiangolo.com/",
+        "# Dependency Injection in FastAPI\n\n## 1. Introduction\n\nDependency Injection (DI) is a programming technique in which an object or function receives the resources or services it needs from an external system rather than creating them directly.\n\nFastAPI provides a built-in Dependency Injection system using `Depends()`.\n\nIt allows developers to reuse common functionality across multiple API endpoints.\n\nCommon use cases include:\n\n- Database connections.\n- Authentication and authorization.\n- Shared query parameters.\n- Configuration management.\n- Logging.\n- API rate limiting.\n- Accessing external services.\n- Reusing AI and RAG pipeline components.\n\nFor example, suppose multiple API endpoints need to verify whether a user is authenticated."
+      ]
+    },
+    {
+      "id": "Q100",
+      "question": "What exact request timeout, in seconds, is guaranteed for every endpoint in the documented FastAPI application?",
+      "expected_answer": "The documentation does not define a universal request timeout value in seconds for every endpoint.",
+      "actual_output": "I could not find sufficient information in the provided documentation.",
+      "retrieved_sources": [
+        "data/raw/fastapi/fastapi_basics.md",
+        "data/raw/fastapi/security.md",
+        "data/raw/fastapi/dependency_injection.md"
+      ],
+      "retrieved_context": [
+        "# FastAPI Fundamentals\n\nFastAPI is a Python framework for building\nmodern web APIs.\n\n## API Endpoints\n\nAn API endpoint is a specific URL where\na client can interact with an application.\n\nFastAPI supports HTTP methods such as GET,\nPOST, PUT, and DELETE.\n\n## Request Validation\n\nFastAPI uses Python type hints and Pydantic\nmodels to validate incoming request data.\n\n## Automatic Documentation\n\nFastAPI automatically generates interactive\nAPI documentation using OpenAPI and Swagger UI.",
+        "# Security in FastAPI\n\n## 1. Introduction\n\nAPI security is the process of protecting an API from unauthorized access, misuse, and malicious requests.\n\nWhen building an API, we need to ensure that:\n\n- Only authenticated users can access protected endpoints.\n- Users can access only the resources they are authorized to use.\n- Passwords are stored securely.\n- Access tokens are validated before granting access.\n- Sensitive information is not exposed in API responses.\n\nFastAPI provides several security utilities that integrate with its Dependency Injection system and automatic OpenAPI documentation.\n\nCommon security concepts include:\n\n1. Authentication\n2. Authorization\n3. Password hashing\n4. Bearer tokens\n5. OAuth2\n6. JSON Web Tokens (JWT)\n7. OAuth2 scopes\n\n## 2. Authentication vs Authorization",
+        "## 5. How Dependency Injection Works\n\nWhen an API request arrives, FastAPI:\n\n1. Identifies the endpoint that should handle the request.\n2. Examines the endpoint's declared dependencies.\n3. Executes the required dependency functions.\n4. Resolves any sub-dependencies.\n5. Passes the dependency results to the endpoint.\n6. Executes the endpoint and produces the response.\n\nConceptual flow:\n\n```text\nClient Request\n      |\n      v\nFastAPI Router\n      |\n      v\nResolve Dependencies\n      |\n      v\nExecute Dependency Functions\n      |\n      v\nInject Dependency Results\n      |\n      v\nExecute API Endpoint\n      |\n      v\nReturn Response\n```\n\nThis allows developers to separate shared application logic from endpoint-specific logic.\n\n## 6. Synchronous and Asynchronous Dependencies"
+      ]
+    }
+  ]
+}
