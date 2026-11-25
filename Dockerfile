@@ -31,4 +31,5 @@ COPY src ./src
 # --------------------------------------------------
 # 7. Start FastAPI application
 # --------------------------------------------------
-CMD ["uv", "run", "--no-sync", "uvicorn", "src.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+CMD ["sh", "-c", "uv run --no-sync uvicorn src.api.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
+
