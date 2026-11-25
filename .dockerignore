@@ -1,0 +1,39 @@
+# Environment variables and secrets
+.env
+.env.*
+
+# Python environments
+.venv
+venv
+
+# Python cache
+__pycache__
+*.pyc
+*.pyo
+
+# Testing cache
+.pytest_cache
+.deepeval
+
+# Local vector database
+chroma_db
+
+# Git
+.git
+.gitignore
+
+# Local experiment outputs
+experiments
+evaluation
+
+# Local debug scripts and outputs
+debug_hybrid_metrics.py
+test_hybrid_retrieval.py
+test_rag.py
+test_reranker.py
+test_retrieval.py
+query_rewriting_output.txt
+regression_output.txt
+
+# Editor files
+.vscode
