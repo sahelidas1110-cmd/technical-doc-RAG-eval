@@ -27,6 +27,7 @@ RUN uv sync --frozen --no-dev --no-install-project
 # 6. Copy application source code
 # --------------------------------------------------
 COPY src ./src
+COPY data ./data
 
 # --------------------------------------------------
 # 7. Start FastAPI application
