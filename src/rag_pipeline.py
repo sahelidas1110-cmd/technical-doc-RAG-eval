@@ -44,6 +44,17 @@ def generate_answer(question: str):
         k=3
     )
 
+    print("=== GENERATE_ANSWER EXECUTED ===")
+    print("ACTIVE THRESHOLD:", MAX_RETRIEVAL_DISTANCE)
+
+    for doc, score in retrieved_documents:
+        print(
+            "RETRIEVAL SCORE:",
+            score,
+            "| SOURCE:",
+            doc.metadata.get("source")
+        )
+
     logger.info(
         "Retrieved %d document chunks.",
         len(retrieved_documents)

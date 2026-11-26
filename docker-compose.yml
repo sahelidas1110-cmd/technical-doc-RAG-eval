@@ -5,7 +5,7 @@ services:
     image: technical-doc-rag-eval:latest
     container_name: technical-doc-rag-api
     ports:
-      - "8000:8000"
+      - "8011:8000"
     env_file:
       - .env
     volumes:
