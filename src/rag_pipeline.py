@@ -25,7 +25,7 @@ logger = logging.getLogger(__name__)
         "chunk_size": 400,
         "chunk_overlap": 80,
         "top_k": 3,
-        "retrieval_threshold": 1.05
+        "retrieval_threshold": 1.15
     }
 )
 def generate_answer(question: str):

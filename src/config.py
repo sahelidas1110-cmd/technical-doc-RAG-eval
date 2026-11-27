@@ -53,7 +53,7 @@ OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "").strip()
 
 EMBEDDING_MODEL = os.getenv(
     "OPENAI_EMBEDDING_MODEL",
-    "text-embedding-3-small"
+    "text-embedding-3-large"
 )
 
 CHAT_MODEL = os.getenv(
@@ -68,12 +68,12 @@ CHAT_MODEL = os.getenv(
 
 CHUNK_SIZE = get_int_env(
     "CHUNK_SIZE",
-    800
+    400
 )
 
 CHUNK_OVERLAP = get_int_env(
     "CHUNK_OVERLAP",
-    120
+    80
 )
 
 if CHUNK_SIZE <= 0:
@@ -94,7 +94,7 @@ if CHUNK_OVERLAP >= CHUNK_SIZE:
 
 MAX_RETRIEVAL_DISTANCE = get_float_env(
     "MAX_RETRIEVAL_DISTANCE",
-    1.0
+    1.15
 )
 
 if MAX_RETRIEVAL_DISTANCE < 0:
@@ -109,7 +109,7 @@ if MAX_RETRIEVAL_DISTANCE < 0:
 
 CHROMA_COLLECTION_NAME = os.getenv(
     "CHROMA_COLLECTION_NAME",
-    "technical_documentation"
+    "rag_embed_large_400_80"
 )
 
 CHROMA_DB_DIR = PROJECT_ROOT / "chroma_db"
