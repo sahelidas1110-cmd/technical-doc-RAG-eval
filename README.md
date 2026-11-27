@@ -56,8 +56,6 @@ flowchart TD
     AN --> UI
 ```
 
-Press Ctrl + Shift + V to open the Markdown Preview
-
 ## Tech Stack
 
 | Component | Technology |
