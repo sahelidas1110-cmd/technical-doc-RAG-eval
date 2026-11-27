@@ -38,18 +38,26 @@ Increasing the threshold to 1.05 improved precision from 0.8000 to 0.8294, recal
 
 Further increases to 1.10 and 1.20 did not improve recall, hit rate or MRR. Precision declined slightly, while the average number of accepted chunks increased.
 
-## Decision
+## Experimental Decision
 
-Threshold 1.05 was selected as the preferred configuration.
+Threshold 1.05 was selected as the preferred configuration based on the results of this retrieval-focused experiment.
 
 It provided the highest precision among the tested configurations while maintaining strong recall, hit rate and MRR without unnecessarily accepting additional chunks.
+
+## Final Application Configuration
+
+Although 1.05 was selected based on the threshold experiment, the retrieval threshold was subsequently configured to 1.15 during final end-to-end application testing.
+
+The threshold experiment focused on source-level retrieval metrics. During the later final application testing stage, the configuration was adjusted to 1.15 as part of the final RAG application setup.
+
+The threshold of 1.15 represents the final application configuration and should not be interpreted as a threshold directly evaluated in the original threshold experiment.
 
 ## Limitations
 
 - The experiment evaluates source-level retrieval metrics rather than answer quality directly.
 - Distance scores are dependent on the embedding model and retrieval configuration.
 - The evaluation dataset represents a finite collection of questions.
-- The selected threshold should also be assessed using end-to-end answer quality metrics, including faithfulness, answer relevance, context precision, context recall and answer correctness.
+- The selected threshold from the retrieval experiment should also be assessed using end-to-end answer quality metrics, including faithfulness, answer relevance, context precision, context recall and answer correctness.
 
 ## Reproducibility
 
@@ -61,4 +69,6 @@ Generated report:
 
 `evaluation/threshold_experiment_report.json`
 
-Selected threshold: `1.05`
+Experimental selection: `1.05`
+
+Final application configuration: `1.15`
